@@ -6,7 +6,8 @@ use std::{
 
 fn main() -> Result<(), Box<dyn Error>> {
     // Retrieve a live version of the reports.proto file
-    let proto_url = "https://usage-reporting.api.apollographql.com/proto/reports.proto";
+    // version of file from when it was first added to router https://github.com/apollographql/router/pull/1764/files#diff-9f63dd267a37e98b01fc37da8ebf5b90000f9fd3f6b248b6b5edd49d841ca354
+    let proto_url = "https://raw.githubusercontent.com/apollographql/router/9c88809d4c84b4af2ce04e4a4255052cdc85c1de/apollo-router/src/spaceport/proto/reports.proto";
     let response = reqwest::blocking::get(proto_url)?;
     let mut content = response.text()?;
 
